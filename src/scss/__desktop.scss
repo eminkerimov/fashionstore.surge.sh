@@ -1,0 +1,382 @@
+body {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.slider {
+  &-img {
+    height: 610px;
+    position: relative;
+    img {
+      object-fit: cover;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.2;
+      z-index: 1;
+    }
+  }
+  &-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 140px;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    span:nth-child(1) {
+      font-size: 25px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 3;
+    }
+    span:nth-child(2) {
+      font-size: 85px;
+      font-weight: 700;
+    }
+    span:nth-child(3) {
+      font-size: 30px;
+      font-family: "Open-Sans-Italic";
+      font-weight: 400;
+      color: rgb(255, 255, 255);
+      line-height: 3;
+      &::after {
+        content: "";
+        width: 120px;
+        height: 3px;
+        background-color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+      &::before {
+        content: "";
+        width: 120px;
+        height: 3px;
+        background-color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+    span:nth-child(4) {
+      font-size: 43px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  &-left-arrow {
+    position: absolute;
+    left: 30px;
+    top:40%;
+    height: 100px;
+    width: 100px;
+    background: url("../img/Arrow Left.png") no-repeat center center;
+  }
+  &-right-arrow {
+    position: absolute;
+    right:30px;
+    top:40%;
+    height: 100px;
+    width: 100px;
+    background: url("../img/Arrow Right.png") no-repeat center center;
+  }
+}
+
+.quick-link {
+  padding: 45px 0;
+  &-ul li {
+    display: inline-block;
+    padding: 15px 0;
+    &:after {
+      content: ":";
+      color: black;
+      padding: 0 10px;
+    }
+    &:first-child:after {
+      font-family: fontAwesome;
+      content: "\f18e";
+      color: black;
+    }
+    &:nth-child(10):after {
+      display: none;
+    }
+    a {
+      color: $color2;
+      padding: 6px;
+      border: 1px solid #fff;
+      font-size: 15px;
+      font-weight: 500;
+      &:hover {
+        background: $color1;
+        color: white;
+        transition: 0.3s;
+        box-shadow: 0 8px 6px -6px $color1;
+      }
+    }
+  }
+}
+
+.rectangle {
+  .rectangle1 {
+    display: flex;
+    width: 100%;
+    height: 280px;
+    justify-content: space-between;
+    flex-direction: row;
+    span {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    button {
+      cursor: pointer;
+      background: $color1;
+      color: white;
+      padding: 13px 40px;
+      border: none;
+      font-size: 15px;
+      margin-top: 20px;
+      transition: 0.2s;
+      &:hover {
+        box-shadow: 0 0.5em 0.5em -0.4em $color1;
+        background: $color1;
+      }
+    }
+    .clothes {
+      height: 280px;
+      width: 360px;
+      background: url("../img/Clothes.png");
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footwear {
+      height: 280px;
+      width: 360px;
+      background: url("../img/Footwear.png");
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .handbags {
+      height: 280px;
+      width: 360px;
+      background: url("../img/Hand Bags.png");
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.sector {
+  width: 100%;
+  margin-top: 100px;
+  &-title {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      width: 370px;
+      font-weight: 500;
+      font-size: 25px;
+      height: 50px;
+      display: inline-block;
+      border-bottom: 3px solid #9c9c9c;
+      a {
+        color: #9c9c9c;
+        &:hover {
+          color: $color2;
+        }
+      }
+    }
+    &-arrow-right {
+      float: right;
+      width: 40px;
+      height: 40px;
+      background: url("../img/Arrow Right small.png") no-repeat center center;
+      padding: 25px;
+    }
+    &-arrow-left {
+      float: right;
+      width: 40px;
+      height: 40px;
+      background: url("../img/Arrow Left small.png") no-repeat center center;
+      padding: 25px;
+    }
+  }
+  .active span {
+    width: 310px;
+    margin-right: 25px;
+    color:$color2;
+    border-bottom: 3px solid $color2;
+    &:first-child a {
+      color: $color2;
+    }
+  }
+  &-rectangle {
+    height: 444px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    .for-sector {
+      height: 100%;
+      width: 572px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      img {
+        position: relative;
+      }
+      span {
+        position: absolute;
+        color: #fff;
+        font-size: 45px;
+        font-weight: 500;
+        margin-bottom: 80px;
+      }
+      button {
+        position: absolute;
+        width: 216px;
+        height: 64px;
+        cursor: pointer;
+        background: $color1;
+        color: white;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: 0.2s;
+        margin-top: 100px;
+        &:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em $color1;
+          background: #d62929;
+        }
+      }
+    }
+    .rectangle-dress {
+      width: 265px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      img {
+        width: 100%;
+        height: 320px;
+        transition: 0.2s;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      h6 {
+        width: 100%;
+        color: $color2;
+      }
+      .rectangle-price {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #e6e6e6;
+        &-left {
+          margin-top: 10px;
+          h2 {
+            width: 100px;
+            color: $color2;
+            padding: 10px 0;
+          }
+          .orange {
+            color: orange;
+          }
+        }
+        &-right button {
+          float: right;
+          cursor: pointer;
+          background: $color1;
+          color: white;
+          padding: 10px 20px;
+          margin-top: 15px;
+          border: none;
+          font-size: 15px;
+          font-weight: 500;
+          transition: 0.2s;
+          &:hover {
+            box-shadow: 0 0.5em 0.5em -0.4em $color1;
+            background: #d62929;
+          }
+        }
+      }
+    }
+    .blog {
+      width: 360px;
+      height: 360px;
+      & img {
+        width: 100%;
+        height: 225px;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      & h3 a {
+        border: none;
+        color: $color2;
+      }
+      & p {
+        font-size: 15px;
+        color:$color2;
+        line-height: 1.6;
+        text-align: left;
+        width: 320px;
+      }
+      .calendar {
+        position: relative;
+        height: 225px;
+        .blog-date {
+          position: absolute;
+          background: $color1;
+          color: white;
+          text-align: center;
+          padding: 10px 15px;
+          bottom: 0;
+          left: 0;
+          & span {
+            display: block;
+            &:first-child {
+              font-size: 32px;
+            }
+            &:last-child {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.last {
+  .sector-rectangle {
+    border-bottom: 1px solid $color4;
+  }
+}

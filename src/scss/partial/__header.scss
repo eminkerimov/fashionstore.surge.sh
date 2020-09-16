@@ -1,0 +1,171 @@
+
+.top-header {
+    border-bottom: 1px solid $color4;
+    &-ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        li {
+            border-left: 1px solid $color4;
+            list-style: none;
+            width: 33.3%;
+            a {
+                display: block;
+                color: $color3;
+                text-align: center;
+                padding: 15px 0;
+                transition: 0.3s;
+                &:hover {
+                    background: $color3;
+                    color: #fff;
+                }
+                &::before {
+                    font-family: fontAwesome;
+                    margin-right: 12px;
+                }
+            }
+            &:nth-child(1) {
+                border-left: none;
+                a::before {
+                    content: "\f07a";
+                }
+            }
+            &:nth-child(2) a::before {
+                content: "\f0d6";
+            }
+            &:nth-child(3) a::before {
+                content: "\f017";
+            }
+        }
+    }
+}
+
+.mid-header {
+    &-block {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 0;
+        .search-block {
+            width: 600px;
+            height: 55px;
+            border: 1px solid $color4;
+            color: #8c8c8c;
+            form {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                .vertical-hr {
+                    height: 20px;
+                    background: #8c8c8c;
+                    display: inline-block;
+                    width: 1px;
+                }
+            }
+            input {
+                width: 315px;
+                padding-left: 20px;
+                border: none;
+                outline: none;
+                height: 100%;
+                color: #5b5b5b;
+                font-size: 15px;
+            }
+            select {
+                width: 222px;
+                text-align-last: center;
+                padding-left: 20px;
+                border: none;
+                outline: none;
+                height: 100%;
+                color: #5b5b5b;
+                font-size: 15px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            button {
+                background: $color1;
+                width: 70px;
+                color: #fff;
+                font-size: 22px;
+                border: none;
+                outline: none;
+                height: 100%;
+                margin-left: 20px;
+                &:hover {
+                    box-shadow: 0 0.5em 0.5em -0.4em $color1;
+                }
+            }
+        }
+        .social {
+            &-ul {
+                li {
+                    display: inline-block;
+                    a {
+                        border: 1px solid #8b8b8b;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: block;
+                        line-height: 40px;
+                        text-align: center;
+                        font-size: 19px;
+                        color: black;
+                        transition: 0.3s;
+                        &:hover {
+                            background: $color3;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-header {
+    background: black;
+    height: 75px;
+    &-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-ul {
+        display: flex;
+        justify-content: space-between;
+        width: 77%;
+        li {
+            list-style: none;
+            width: 14%;
+            a {
+                display: block;
+                color: #fff;
+                text-align: center;
+                padding: 27px 0;
+                transition: 0.3s;
+                border-bottom: 6px solid transparent;
+                font-weight: 500;
+                &:hover {
+                    border-bottom: 6px solid $color1;
+                    color:$color1;
+                }
+            }
+        }
+    }
+    &-cart {
+        width: 18%;
+        background:$color1;
+        color: #fff;
+        text-align: center;
+        padding: 30px 0;
+        &::before {
+            font-family: fontAwesome;
+            margin-right: 12px;
+            content: "\f07a";
+        }
+    }
+}
+
+// mobil-------------
