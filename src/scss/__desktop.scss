@@ -4,14 +4,18 @@ body {
   font-size: 14px;
 }
 
-.slider {
-  &-img {
-    height: 610px;
-    position: relative;
-    img {
-      object-fit: cover;
-    }
-    &:before {
+// .container{
+//   border: 1px solid red;
+// }
+
+.main {
+  position: relative;
+  height: 610px;
+  .slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -19,8 +23,21 @@ body {
       width: 100%;
       height: 100%;
       background: black;
-      opacity: 0.2;
+      opacity: 0.4;
       z-index: 1;
+    }
+    &-item {
+      height: 100%;
+      width: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+        transition: 3s;
+        transform: scale(1.5);
+      }
+      &.slick-active img {
+        transform: scale(1);
+      }
     }
   }
   &-content {
@@ -75,20 +92,22 @@ body {
       text-transform: uppercase;
     }
   }
-  &-left-arrow {
+  &-arrow-left {
     position: absolute;
-    left: 30px;
-    top:40%;
-    height: 100px;
-    width: 100px;
+    z-index: 2;
+    left: 10px;
+    top: 40%;
+    height: 70px;
+    width: 70px;
     background: url("../img/Arrow Left.png") no-repeat center center;
   }
-  &-right-arrow {
+  &-arrow-right {
     position: absolute;
-    right:30px;
-    top:40%;
-    height: 100px;
-    width: 100px;
+    z-index: 2;
+    right: 10px;
+    top: 40%;
+    height: 70px;
+    width: 70px;
     background: url("../img/Arrow Right.png") no-repeat center center;
   }
 }
@@ -127,69 +146,60 @@ body {
   }
 }
 
-.rectangle {
-  .rectangle1 {
-    display: flex;
-    width: 100%;
-    height: 280px;
-    justify-content: space-between;
-    flex-direction: row;
-    span {
-      color: #fff;
-      font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-    button {
-      cursor: pointer;
-      background: $color1;
-      color: white;
-      padding: 13px 40px;
-      border: none;
-      font-size: 15px;
-      margin-top: 20px;
-      transition: 0.2s;
-      &:hover {
-        box-shadow: 0 0.5em 0.5em -0.4em $color1;
-        background: $color1;
+.category {
+  height: 280px;
+  display: flex; 
+  .layout {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  img {
+      position: relative;
+  }
+  .content {
+      position: absolute;
+      top: 30%;
+      left:30%;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      span {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 20px;
       }
-    }
-    .clothes {
-      height: 280px;
-      width: 360px;
-      background: url("../img/Clothes.png");
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-    .footwear {
-      height: 280px;
-      width: 360px;
-      background: url("../img/Footwear.png");
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-    .handbags {
-      height: 280px;
-      width: 360px;
-      background: url("../img/Hand Bags.png");
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
+      button {
+        cursor: pointer;
+        background: $color1;
+        color: white;
+        padding: 13px 40px;
+        border: none;
+        font-size: 15px;
+        margin-top: 20px;
+        transition: 0.2s;
+        &:hover {
+          box-shadow: 0 0.5em 0.5em -0.4em $color1;
+          background: $color1;
+        }
+      }
   }
 }
 
 .sector {
-  width: 100%;
-  margin-top: 100px;
+  height: 540px;
+  display: flex;
+  margin-top: 90px;
   &-title {
-    width: 100%;
-    height: 100px;
+    height: 95px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -200,46 +210,60 @@ body {
       height: 50px;
       display: inline-block;
       border-bottom: 3px solid #9c9c9c;
-      a {
-        color: #9c9c9c;
-        &:hover {
-          color: $color2;
-        }
+    }
+    a {
+      width: 100%;
+      font-weight: 500;
+      font-size: 25px;
+      height: 50px;
+      display: inline-block;
+      border-bottom: 3px solid #9c9c9c;
+      color: $color5;
+      &:hover{
+        cursor: pointer;
+        color: $color2;
       }
     }
-    &-arrow-right {
-      float: right;
-      width: 40px;
-      height: 40px;
-      background: url("../img/Arrow Right small.png") no-repeat center center;
-      padding: 25px;
-    }
-    &-arrow-left {
-      float: right;
-      width: 40px;
-      height: 40px;
-      background: url("../img/Arrow Left small.png") no-repeat center center;
-      padding: 25px;
+    .tabs-arrow {
+        &-right {
+          float: right;
+          width: 40px;
+          height: 40px;
+          background: url("../img/Arrow Right small.png") no-repeat center center;
+          padding: 25px;
+        }
+        &-left {
+          float: right;
+          width: 40px;
+          height: 40px;
+          background: url("../img/Arrow Left small.png") no-repeat center center;
+          padding: 25px;
+        }
+      }
+    &-arrow {
+      .man-right, .woman-right {
+        float: right;
+        width: 40px;
+        height: 40px;
+        background: url("../img/Arrow Right small.png") no-repeat center center;
+        padding: 25px;
+      }
+      .man-left, .woman-left {
+        float: right;
+        width: 40px;
+        height: 40px;
+        background: url("../img/Arrow Left small.png") no-repeat center center;
+        padding: 25px;
+      }
     }
   }
-  .active span {
-    width: 310px;
-    margin-right: 25px;
-    color:$color2;
-    border-bottom: 3px solid $color2;
-    &:first-child a {
-      color: $color2;
-    }
-  }
-  &-rectangle {
+  .sector-rectangle {
     height: 444px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     .for-sector {
       height: 100%;
-      width: 572px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -273,7 +297,6 @@ body {
       }
     }
     .rectangle-dress {
-      width: 265px;
       height: 100%;
       display: flex;
       justify-content: space-between;
@@ -328,7 +351,6 @@ body {
       }
     }
     .blog {
-      width: 360px;
       height: 360px;
       & img {
         width: 100%;
@@ -344,7 +366,7 @@ body {
       }
       & p {
         font-size: 15px;
-        color:$color2;
+        color: $color2;
         line-height: 1.6;
         text-align: left;
         width: 320px;
@@ -373,10 +395,26 @@ body {
       }
     }
   }
+  .tab {
+    &-content {
+      height: 0px;
+    }
+    &-content-active {
+      height: auto;
+    }
+    &-link-active {
+      color: $color2;
+    }
+  }
 }
 
 .last {
-  .sector-rectangle {
-    border-bottom: 1px solid $color4;
+    border: 1px solid $color4;
+}
+
+@media only screen and (min-width: 1500px) {
+  .category, .sector:nth-of-type(2n-1) {background-image: linear-gradient(to right, $color6 130px, transparent 130px);}
+  .sector:nth-of-type(2n) {
+    background-image: linear-gradient(to left, $color6 130px, transparent 130px);
   }
 }
