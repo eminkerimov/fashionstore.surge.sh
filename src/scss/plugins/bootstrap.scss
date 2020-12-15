@@ -549,7 +549,7 @@
   
   @media (min-width: 576px) {
     .container {
-      max-width: 540px;
+      max-width: 100%;
     }
   }
   
@@ -581,7 +581,7 @@
   
   @media (min-width: 576px) {
     .container, .container-sm {
-      max-width: 540px;
+      max-width: 100%;
     }
   }
   

@@ -22,10 +22,17 @@ $(document).ready(function () {
         slidesToScroll: 3,
         responsive: [
             {
-                breakpoint: 740,
+                breakpoint: 991,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
@@ -50,7 +57,21 @@ $(document).ready(function () {
             nextArrow: $(this.next),
             responsive: [
                 {
-                    breakpoint: 980,
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 550,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1
@@ -78,7 +99,30 @@ $(document).ready(function () {
             autoplaySpeed: 2500,
             prevArrow: $('.tabs-arrow-left'),
             nextArrow: $('.tabs-arrow-right'),
-            asNavFor: this.nav
+            asNavFor: this.nav,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     });
 
@@ -103,3 +147,8 @@ $(document).ready(function () {
     // -------------------
 
 });
+
+function Fn() {
+    var element = document.querySelector(".mobile-menu");
+    element.classList.toggle("open");
+}

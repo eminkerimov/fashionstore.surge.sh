@@ -15,26 +15,13 @@
                 text-transform: uppercase;
                 padding: 15px 0;
                 transition: 0.3s;
+                span {
+                    padding-left: 15px;
+                }
                 &:hover {
                     background: $color3;
                     color: #fff;
                 }
-                &::before {
-                    font-family: fontAwesome;
-                    margin-right: 12px;
-                }
-            }
-            &:nth-child(1) {
-                border-left: none;
-                a::before {
-                    content: "\f07a";
-                }
-            }
-            &:nth-child(2) a::before {
-                content: "\f0d6";
-            }
-            &:nth-child(3) a::before {
-                content: "\f017";
             }
         }
     }
@@ -80,6 +67,7 @@
             height: 100%;
             color: #5b5b5b;
             font-size: 15px;
+            background: transparent;
             &:hover {
                 cursor: pointer;
             }
@@ -98,7 +86,6 @@
             }
         }
     }
-
     .social {
         text-align: right;
         &-ul {
@@ -128,46 +115,47 @@
 
 .menu-header {
     background: black;
-    height: 75px;
     &-block {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    &-ul {
-        display: flex;
-        justify-content: space-between;
-        width: 77%;
-        li {
-            list-style: none;
-            width: 14%;
-            a {
-                display: block;
-                color: #fff;
-                text-align: center;
-                padding: 27px 0;
-                transition: 0.3s;
-                border-bottom: 6px solid transparent;
-                font-weight: 500;
-                &:hover {
-                    border-bottom: 6px solid $color1;
-                    color: $color1;
+        .mobile{
+            display: none;
+        }
+        &-ul {
+            display: flex;
+            justify-content: space-between;
+            width: 77%;
+            li {
+                list-style: none;
+                a {
+                    display: block;
+                    color: #fff;
+                    text-align: center;
+                    padding: 31px 9px;
+                    transition: 0.3s;
+                    border-bottom: 6px solid transparent;
+                    font-weight: 500;
+                    &:hover {
+                        border-bottom: 6px solid $color1;
+                        color: $color1;
+                    }
                 }
             }
         }
-    }
-    &-cart {
-        width: 18%;
-        background: $color1;
-        color: #fff;
-        text-align: center;
-        padding: 30px 0;
-        &::before {
-            font-family: fontAwesome;
-            margin-right: 12px;
-            content: "\f07a";
+        &-cart {
+            width: 18%;
+            background: $color1;
+            color: #fff;
+            text-align: center;
+            padding: 28px 0;
+            p:first-of-type::before {
+                font-family: fontAwesome;
+                margin-right: 12px;
+                content: "\f07a";
+            }
         }
     }
 }
 
-// mobil-------------
+// mobil------------

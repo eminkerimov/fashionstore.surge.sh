@@ -44,8 +44,6 @@ footer {
         .bottom-part {
             margin-top: 30px;
             .footer-menu {
-                display: flex;
-                justify-content: space-between;
                 &-ul {
                     span{
                         font-weight: 500;
@@ -70,7 +68,6 @@ footer {
                         margin-top: 25px;
                         &:first-of-type {
                             margin-top: 40px;
-                            width: 300px;
                         }
                         &:first-of-type {
                             &::before {
