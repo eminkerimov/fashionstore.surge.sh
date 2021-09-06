@@ -58,10 +58,14 @@ body {
       font-weight: 500;
       text-transform: uppercase;
       line-height: 3;
+      animation-name: moveDown;
+      animation-duration: 5s;
     }
     h1 {
       font-size: 85px;
       font-weight: 700;
+      animation-name: moveRight;
+      animation-duration: 5s;
     }
     span:nth-child(3) {
       font-size: 30px;
@@ -69,6 +73,8 @@ body {
       font-weight: 400;
       color: rgb(255, 255, 255);
       line-height: 3;
+      animation-name: moveUp;
+      animation-duration: 5s;
       &::after {
         content: "";
         width: 120px;
@@ -92,6 +98,8 @@ body {
       font-size: 43px;
       font-weight: 700;
       text-transform: uppercase;
+      animation-name: moveUp;
+      animation-duration: 5s;
     }
   }
   &-arrow-left {
@@ -427,5 +435,36 @@ body {
   .sector-title {
     margin-top: 30px;
     margin-bottom: 20px;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
